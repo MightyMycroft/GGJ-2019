@@ -41,7 +41,7 @@ public class Fishing : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        // Hit fish, we caught it
+        // Fish Caught
         if(collider.gameObject.tag == FishTag)
         {
             Debug.Log("Fish Caught!");
@@ -49,6 +49,8 @@ public class Fishing : MonoBehaviour
             collider.transform.parent = fishCargoSpaces[cargoIndex];
             collider.transform.localPosition = Vector3.zero;
             collider.transform.rotation = Quaternion.identity;
+
+            collider.gameObject.GetComponent<FishMover>().enabled = false;
 
             cargoIndex++;
         }
