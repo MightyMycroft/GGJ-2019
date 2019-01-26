@@ -17,6 +17,6 @@ public class Speedometer : MonoBehaviour
     void Update()
     {
         var input = Input.GetKey(KeyCode.Space);
-        SpeedRod.localRotation = Quaternion.Slerp(SpeedRod.localRotation, Quaternion.Euler(input ? maxAngle : minAngle, 0, 0), Time.deltaTime * 2);
+        SpeedRod.localRotation = Quaternion.Slerp(SpeedRod.localRotation, Quaternion.Euler(input ? maxAngle : minAngle, 0, 0), Time.deltaTime * 1.5f);
     }
 }

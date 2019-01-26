@@ -11,6 +11,7 @@ public class BoatController : MonoBehaviour
     public float OffsetHeight;
     public float TargetHeight;
     public float Mass=100;
+    public float MaxAngularVelocity = 2;
 
     public float FinalHeight
     {
@@ -32,7 +33,6 @@ public class BoatController : MonoBehaviour
     [Header("Rotation")]
     public float CurrentTorque = 0;
     public float MaxTorque = 10;
-    public float MaxAngularVelocity = 2;
 
     [Space(5)]
     [Header("Speed")]
@@ -54,31 +54,20 @@ public class BoatController : MonoBehaviour
         ChildRotation = ChildHeight.GetChild(0);
     }
 
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-
-    }
-
     private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            rb.AddForce(transform.forward * MaxForce, ForceMode.Impulse);
+            rb.AddForce(transform.forward * MaxForce, ForceMode.Force);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            rb.AddTorque(-transform.up * MaxTorque, ForceMode.Impulse);
+            rb.AddTorque(-transform.up * MaxTorque, ForceMode.Force);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            rb.AddTorque(transform.up * MaxTorque, ForceMode.Impulse);
+            rb.AddTorque(transform.up * MaxTorque, ForceMode.Force);
         }
 
         var position2D = new Vector2(transform.position.x, transform.position.z);
