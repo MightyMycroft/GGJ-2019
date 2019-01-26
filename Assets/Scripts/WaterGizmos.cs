@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class WaterGizmos : MonoBehaviour
 {
+	[SerializeField] bool drawGizmos = false;
 	void OnDrawGizmos() {
+		if(!drawGizmos)
+			return;
+
 		var worldPos = transform.position;
 		worldPos.x -= 5;
 		worldPos.z -= 5;
