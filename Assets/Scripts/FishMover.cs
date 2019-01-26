@@ -8,6 +8,9 @@ public class FishMover : MonoBehaviour
 
 	[SerializeField] Vector2 direction = Vector2.up;
 	[SerializeField] float speed = 1f;
+	[SerializeField] float amplitude;
+	[SerializeField] float frequency;
+	[SerializeField] float offset;
 
 	private Transform m_transform;
 
@@ -19,10 +22,10 @@ public class FishMover : MonoBehaviour
     {
 		var position = transform.position;
 		var position2D = new Vector2(position.x, position.z);
-		var fishHeight = GetHeight(1f, .5f, .5f);
+		var fishHeight = GetHeight(amplitude, frequency, offset);
 
 		position += Time.deltaTime * speed * DirectionToWorld(direction);
-		position.y = Water.GetHeightAt(position2D) + fishHeight;
+		position.y = Water.GetHeightAt(position2D);// + fishHeight;
 
 		var normal = Water.GetNormal(position2D);
 		var tangent = Water.GetTangent(position2D, direction);

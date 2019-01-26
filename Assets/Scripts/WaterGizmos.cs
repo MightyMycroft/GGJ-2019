@@ -18,11 +18,11 @@ public class WaterGizmos : MonoBehaviour
 				localPos.y = Water.GetHeightAt(new Vector2(worldPos.x + x, worldPos.z + y));
 				localPos.x += x;
 				localPos.z += y;
-				//Debug.DrawLine(localPos, localPos + .1f * Vector3.up, Color.white);
+				Debug.DrawLine(localPos, localPos + .1f * Vector3.up, Color.white);
 				//var tangent = GetTangent(new Vector2(localPos.x, localPos.z), new Vector2(1, 1));
 				//Debug.DrawRay(localPos, tangent);
-				var normal = Water.GetNormal(new Vector2(localPos.x, localPos.z));
-				Debug.DrawRay(localPos, normal);
+				//var normal = Water.GetNormal(new Vector2(localPos.x, localPos.z));
+				//Debug.DrawRay(localPos, normal);
 			}
 		}
 	}
