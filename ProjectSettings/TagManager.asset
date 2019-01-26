@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Dock
   - FishingSpot
+  - Fish
   layers:
   - Default
   - TransparentFX

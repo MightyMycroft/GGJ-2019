@@ -6,7 +6,7 @@ using UnityEngine;
 public class Fishing : MonoBehaviour
 {
     public string FishTag = "Fish";
-    public string HomeTag = "Home";
+    public string HomeTag = "Dock";
 
     public Transform fishCargoRoot;         
     private Transform[] fishCargoSpaces;    // Transform for where to store the fish, the fish gets childed to those transform
@@ -19,6 +19,8 @@ public class Fishing : MonoBehaviour
         {
             fishCargoSpaces[i] = fishCargoRoot.GetChild(i);
         }
+
+        cargoIndex = 0;
     }
 
     void SellFish()
@@ -31,25 +33,33 @@ public class Fishing : MonoBehaviour
             // like starts from the top and goes to bottom in like 1-2 seconds
 
             if(fishCargoSpaces[i].GetChild(0) != null)
-                Destroy(fishCargoSpaces[i].GetChild(0));
+                Destroy(fishCargoSpaces[i].GetChild(0).gameObject);
         }
+
+        cargoIndex = 0;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        // Hit fish, we caught it
-        if(collision.gameObject.tag == FishTag)
+        // Fish Caught
+        if(collider.gameObject.tag == FishTag)
         {
-            collision.transform.parent = fishCargoSpaces[cargoIndex];
-            collision.transform.localPosition = Vector3.zero;
-            collision.transform.rotation = Quaternion.identity;
+            Debug.Log("Fish Caught!");
+
+            collider.transform.parent = fishCargoSpaces[cargoIndex];
+            collider.transform.localPosition = Vector3.zero;
+            collider.transform.rotation = Quaternion.identity;
+
+            collider.gameObject.GetComponent<FishMover>().enabled = false;
 
             cargoIndex++;
         }
 
         // We are home, sell fish
-        if(collision.gameObject.tag == HomeTag)
+        if (collider.gameObject.tag == HomeTag)
         {
+            Debug.Log("Selling Fish!");
+
             SellFish();
 
             cargoIndex = 0;

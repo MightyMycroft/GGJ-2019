@@ -23,12 +23,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820385951934806683}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3493078611184877443}
-  m_Father: {fileID: 5684995893122573747}
+  m_Father: {fileID: 6383742915428659101}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5684995891748035522
@@ -73,11 +73,10 @@ GameObject:
   - component: {fileID: 5684995893122573747}
   - component: {fileID: 5684995893122573757}
   - component: {fileID: 5684995893122573746}
-  - component: {fileID: 8498234738309499687}
-  - component: {fileID: 410361143678318613}
+  - component: {fileID: 1617413996}
   m_Layer: 0
   m_Name: Boat_Prefab
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,8 +93,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5684995891748035523}
-  - {fileID: 6342325888343136864}
-  - {fileID: 8024435364647202580}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -112,10 +109,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe9c68158fc245d4291a2add5c7a41c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DrawGizmos: 0
   OffsetHeight: 0
   TargetHeight: 0
+  Mass: 100
   CurrentTorque: 0
   MaxTorque: 10
+  MaxAngularVelocity: 2
   CurrentSpeed: 0
   MaxForce: 10
 --- !u!54 &5684995893122573746
@@ -134,8 +134,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!135 &8498234738309499687
-SphereCollider:
+--- !u!65 &1617413996
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -143,26 +143,10 @@ SphereCollider:
   m_GameObject: {fileID: 5684995893122573756}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 3.85
-  m_Center: {x: 0, y: 1.58, z: -0.61}
---- !u!114 &410361143678318613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5684995893122573756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: eae30ae80ea3de6488859a20ccdd9434, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FishTag: Fish
-  HomeTag: Home
-  fishCargoRoot: {fileID: 6342325888343136864}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5921030273592392462
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,6 +156,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6383742915428659101}
+  - component: {fileID: 693234905}
+  - component: {fileID: 693234904}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -192,9 +178,40 @@ Transform:
   m_Children:
   - {fileID: 1051988647584820357}
   - {fileID: 8080158858320324324}
+  - {fileID: 8024435364647202580}
+  - {fileID: 6342325888343136864}
   m_Father: {fileID: 5684995891748035523}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &693234905
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5921030273592392462}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.38
+  m_Center: {x: 0, y: 0, z: 1.73}
+--- !u!114 &693234904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5921030273592392462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: eae30ae80ea3de6488859a20ccdd9434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FishTag: Fish
+  HomeTag: Dock
+  fishCargoRoot: {fileID: 6342325888343136864}
 --- !u!1 &6926945913631169423
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,12 +235,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6926945913631169423}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.123, z: 0.599}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5684995893122573747}
-  m_RootOrder: 1
+  m_Father: {fileID: 6383742915428659101}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2944873952949506246
 PrefabInstance:
@@ -245,12 +262,12 @@ PrefabInstance:
     - target: {fileID: 1776568058562441029, guid: 09fbbe5b5493a0b4591adcb2d1b6eac3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.53
+      value: 3.191
       objectReference: {fileID: 0}
     - target: {fileID: 1776568058562441029, guid: 09fbbe5b5493a0b4591adcb2d1b6eac3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.071
+      value: 0.271
       objectReference: {fileID: 0}
     - target: {fileID: 1776568058562441029, guid: 09fbbe5b5493a0b4591adcb2d1b6eac3,
         type: 3}
@@ -315,7 +332,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d73644f6d62c8d64f817e5d355e260f3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.612
+      value: -0.032000005
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d73644f6d62c8d64f817e5d355e260f3,
         type: 3}
@@ -395,7 +412,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: caaf3f2a85ebdd849b8927c00a6059a3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.48
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: caaf3f2a85ebdd849b8927c00a6059a3,
         type: 3}
