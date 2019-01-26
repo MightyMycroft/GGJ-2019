@@ -6,7 +6,6 @@ using UnityEngine;
 public class BoatController : MonoBehaviour
 {
     public float TargetHeight;
-    public float TargetSpeed;
 
     [Space(5)]
     [Header("Rotation")]
@@ -40,7 +39,12 @@ public class BoatController : MonoBehaviour
 
     void Update()
     {
-        TargetHeight = Mathf.Sin(Time.time);
+        var position2D = new Vector2(transform.position.x, transform.position.z);
+        TargetHeight = Water.GetHeightAt(position2D)+1;
+        var normal = Water.GetNormal(position2D);
+        var direction = new Vector2(transform.forward.x, transform.forward.z);
+        var tangent = Water.GetTangent(position2D, direction);
+        ChildRotation.transform.rotation = Quaternion.LookRotation(tangent, normal);
     }
 
     private void FixedUpdate()
