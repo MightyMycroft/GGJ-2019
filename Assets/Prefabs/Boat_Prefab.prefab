@@ -93,7 +93,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5684995891748035523}
-  - {fileID: 6342325888343136864}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -180,6 +179,7 @@ Transform:
   - {fileID: 1051988647584820357}
   - {fileID: 8080158858320324324}
   - {fileID: 8024435364647202580}
+  - {fileID: 6342325888343136864}
   m_Father: {fileID: 5684995891748035523}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FishTag: Fish
-  HomeTag: Home
+  HomeTag: Dock
   fishCargoRoot: {fileID: 6342325888343136864}
 --- !u!1 &6926945913631169423
 GameObject:
@@ -235,12 +235,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6926945913631169423}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.123, z: 0.599}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5684995893122573747}
-  m_RootOrder: 1
+  m_Father: {fileID: 6383742915428659101}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2944873952949506246
 PrefabInstance:
