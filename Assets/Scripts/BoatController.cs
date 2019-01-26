@@ -5,7 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class BoatController : MonoBehaviour
 {
+    public float OffsetHeight;
     public float TargetHeight;
+
+    public float FinalHeight
+    {
+        get
+        {
+            return OffsetHeight + TargetHeight;
+        }
+    }
 
     [Space(5)]
     [Header("Rotation")]
@@ -18,7 +27,6 @@ public class BoatController : MonoBehaviour
     public float MaxForce = 10;
 
     [Space(10)]
-
     Transform ChildHeight;
     Transform ChildRotation;
 
@@ -27,7 +35,7 @@ public class BoatController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-
+        rb.maxAngularVelocity = 1;
         ChildHeight = transform.GetChild(0);
         ChildRotation = ChildHeight.GetChild(0);
     }
@@ -40,7 +48,7 @@ public class BoatController : MonoBehaviour
     void Update()
     {
         var position2D = new Vector2(transform.position.x, transform.position.z);
-        TargetHeight = Water.GetHeightAt(position2D)+1;
+        TargetHeight = Water.GetHeightAt(position2D) + 1;
         var normal = Water.GetNormal(position2D);
         var direction = new Vector2(transform.forward.x, transform.forward.z);
         var tangent = Water.GetTangent(position2D, direction);
