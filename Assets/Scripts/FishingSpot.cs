@@ -8,25 +8,11 @@ using UnityEngine;
 public class FishingSpot : MonoBehaviour
 {
     public GameObject FishPrefab;
-    public bool IsCaught;
-
-    private GameObject _fishRef;
-
-    public void Start()
-    {
-        
-    }
-
-    void Caught()
-    {
-        IsCaught = true;
-        _fishRef = null;
-
-        //TODO Do something visual such that the player knows that there is no more fish to caught here
-    }
+    public Transform FishRootContainer;
 
     private void SpawnFish()
     {
-        _fishRef = Instantiate(FishPrefab, transform.position, Quaternion.identity);
+        if(FishRootContainer.childCount == 0)
+            Instantiate(FishPrefab, FishRootContainer);
     }
 }
