@@ -10,6 +10,7 @@ public class BoatController : MonoBehaviour
     [Space(10)]
     public float OffsetHeight;
     public float TargetHeight;
+    public float Mass=100;
 
     public float FinalHeight
     {
@@ -30,7 +31,8 @@ public class BoatController : MonoBehaviour
     [Space(5)]
     [Header("Rotation")]
     public float CurrentTorque = 0;
-    public float MaxTorque = 1;
+    public float MaxTorque = 10;
+    public float MaxAngularVelocity = 2;
 
     [Space(5)]
     [Header("Speed")]
@@ -46,7 +48,8 @@ public class BoatController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        rb.maxAngularVelocity = 1;
+        rb.maxAngularVelocity = MaxAngularVelocity;
+        rb.mass = Mass;
         ChildHeight = transform.GetChild(0);
         ChildRotation = ChildHeight.GetChild(0);
     }
@@ -66,16 +69,16 @@ public class BoatController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            rb.AddForce(transform.forward * MaxForce, ForceMode.Force);
+            rb.AddForce(transform.forward * MaxForce, ForceMode.Impulse);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            rb.AddTorque(-transform.up * MaxTorque, ForceMode.Force);
+            rb.AddTorque(-transform.up * MaxTorque, ForceMode.Impulse);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            rb.AddTorque(transform.up * MaxTorque, ForceMode.Force);
+            rb.AddTorque(transform.up * MaxTorque, ForceMode.Impulse);
         }
 
         var position2D = new Vector2(transform.position.x, transform.position.z);
