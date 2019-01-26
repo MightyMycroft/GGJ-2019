@@ -35,20 +35,20 @@ public class Fishing : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
         // Hit fish, we caught it
-        if(collision.gameObject.tag == FishTag)
+        if(collider.gameObject.tag == FishTag)
         {
-            collision.transform.parent = fishCargoSpaces[cargoIndex];
-            collision.transform.localPosition = Vector3.zero;
-            collision.transform.rotation = Quaternion.identity;
+            collider.transform.parent = fishCargoSpaces[cargoIndex];
+            collider.transform.localPosition = Vector3.zero;
+            collider.transform.rotation = Quaternion.identity;
 
             cargoIndex++;
         }
 
         // We are home, sell fish
-        if(collision.gameObject.tag == HomeTag)
+        if(collider.gameObject.tag == HomeTag)
         {
             SellFish();
 
