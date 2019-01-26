@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FishTag: Fish
   HomeTag: Home
-  fishCargoRoot: {fileID: 0}
+  fishCargoRoot: {fileID: 6342325888343136864}
 --- !u!1 &6926945913631169423
 GameObject:
   m_ObjectHideFlags: 0
