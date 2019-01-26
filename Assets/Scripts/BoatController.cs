@@ -6,9 +6,18 @@ using UnityEngine;
 public class BoatController : MonoBehaviour
 {
     public float TargetHeight;
-    public float TargetSpeed;
 
-    public float Speed;
+    [Space(5)]
+    [Header("Rotation")]
+    public float CurrentTorque = 0;
+    public float MaxTorque = 10;
+
+    [Space(5)]
+    [Header("Speed")]
+    public float CurrentSpeed;
+    public float MaxForce = 10;
+
+    [Space(10)]
 
     Transform ChildHeight;
     Transform ChildRotation;
@@ -30,34 +39,34 @@ public class BoatController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            Speed += Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            Speed -= Time.deltaTime;
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(-Vector3.up);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(Vector3.up);
-        }
-
-        transform.position += transform.forward * Speed * Time.deltaTime;
-
-        TargetHeight = Mathf.Sin(Time.time);
+        var position2D = new Vector2(transform.position.x, transform.position.z);
+        TargetHeight = Water.GetHeightAt(position2D)+1;
+        var normal = Water.GetNormal(position2D);
+        var direction = new Vector2(transform.forward.x, transform.forward.z);
+        var tangent = Water.GetTangent(position2D, direction);
+        ChildRotation.transform.rotation = Quaternion.LookRotation(tangent, normal);
     }
 
     private void FixedUpdate()
     {
         ChildHeight.transform.position = Vector3.Lerp(ChildHeight.transform.position, new Vector3(0, TargetHeight, 0) + transform.position, Time.fixedDeltaTime);
 
+        CurrentSpeed = Vector3.Dot(transform.forward, rb.velocity);
+        if (Input.GetKey(KeyCode.Space))
+        {
+            rb.AddForce(transform.forward * MaxForce, ForceMode.Force);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            rb.AddTorque(-transform.up * MaxTorque, ForceMode.Force);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            rb.AddTorque(transform.up * MaxTorque, ForceMode.Force);
+        }
     }
+
 
     private void OnDrawGizmos()
     {
@@ -71,6 +80,7 @@ public class BoatController : MonoBehaviour
         Gizmos.color = Color.yellow * 0.66f;
         Gizmos.DrawLine(transform.position, transform.position + transform.forward);
 
+        // Speed gizmos
         Gizmos.color = Color.white;
         if (rb)
         {
