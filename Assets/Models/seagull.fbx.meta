@@ -1,17 +1,14 @@
 fileFormatVersion: 2
-guid: a31c326267ddb6542ad761232dbf3c85
+guid: c9ee83acb556f974aa27dc5fd4cae804
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
-      74: -9050754523318300077
-    second: FisherMan|fish
+      74: 2108944049028585761
+    second: Cube.005|Cube.005Action
   - first:
-      74: 4659455167625453958
-    second: FisherMan|idle
-  - first:
-      74: -3300175062223454824
-    second: FisherMan|walk
+      74: 3177383393946230413
+    second: Cube.005|Cube.005Action.001
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -41,11 +38,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: FisherMan|fish
-      takeName: FisherMan|fish
-      internalID: -9050754523318300077
+      name: Cube.005|Cube.005Action
+      takeName: Cube.005|Cube.005Action
+      internalID: 2108944049028585761
       firstFrame: 0
-      lastFrame: 42
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -70,40 +67,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: FisherMan|idle
-      takeName: FisherMan|idle
-      internalID: 4659455167625453958
+      name: Cube.005|Cube.005Action.001
+      takeName: Cube.005|Cube.005Action.001
+      internalID: 3177383393946230413
       firstFrame: 0
-      lastFrame: 121
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: FisherMan|walk
-      takeName: FisherMan|walk
-      internalID: -3300175062223454824
-      firstFrame: 0
-      lastFrame: 40
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
