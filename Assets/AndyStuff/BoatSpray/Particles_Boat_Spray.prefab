@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2755786374063869271}
   - component: {fileID: 7077275916788273489}
   - component: {fileID: 6292613508374048749}
+  - component: {fileID: 3260896957604431961}
   m_Layer: 0
   m_Name: Particles_Boat_Spray
   m_TagString: Untagged
@@ -4699,3 +4700,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &3260896957604431961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5661659303708615222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 91b2f48ab74457649be7ea541d54b60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

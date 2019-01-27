@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5673221748447765841}
   - component: {fileID: 5923981053455578449}
+  - component: {fileID: 5859602415901782027}
   - component: {fileID: 112231862421490319}
   m_Layer: 0
   m_Name: Particles_Boat_Smoke
@@ -4655,6 +4656,19 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &5859602415901782027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8402059338961415087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 91b2f48ab74457649be7ea541d54b60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!199 &112231862421490319
 ParticleSystemRenderer:
   serializedVersion: 6
