@@ -8,6 +8,8 @@ public class Fishing : MonoBehaviour
     public string FishTag = "Fish";
     public string HomeTag = "Dock";
 
+    public AudioClip[] reelingClip;
+
     public Transform fishCargoRoot;         
     private Transform[] fishCargoSpaces;    // Transform for where to store the fish, the fish gets childed to those transform
     private int cargoIndex;                 // What cargo index should we put the next fish 
@@ -45,6 +47,8 @@ public class Fishing : MonoBehaviour
         if(collider.gameObject.tag == FishTag)
         {
             Debug.Log("Fish Caught!");
+
+            AudioSource.PlayClipAtPoint(reelingClip[Random.Range(0, reelingClip.Length)], transform.position);
 
             collider.transform.parent = fishCargoSpaces[cargoIndex];
             collider.transform.localPosition = Vector3.zero;
