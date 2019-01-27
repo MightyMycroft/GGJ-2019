@@ -6,10 +6,12 @@ public class ObjectSpawner : MonoBehaviour
 {
 	[SerializeField] GameObject[] prefabsToSpawn;
 	[SerializeField] int poolSize;
-	[SerializeField] Transform spawnPoint;
-	[SerializeField] float spawnWidth;
+	[SerializeField] Transform boat;
+    [SerializeField] Vector3 offset;
+    [SerializeField] float spawnWidth;
+    [SerializeField] Transform folder;
 
-	GameObject[][] prefabPools;
+    GameObject[][] prefabPools;
 	int[] lastUsed;
 
 	private void Awake() {
@@ -36,24 +38,26 @@ public class ObjectSpawner : MonoBehaviour
 	{
 		int randomObject = Random.Range(0, prefabsToSpawn.Length);
 		int index = lastUsed[randomObject];
-		lastUsed[randomObject] = index++;
+        var gameObject = prefabPools[randomObject][index];
+        lastUsed[randomObject] = (index + 1) % poolSize;
 
-		var gameObject = prefabPools[randomObject][index];
+        Debug.Log(lastUsed[randomObject]);
 
 		return gameObject;
 	}
 
-	Vector3 GetRandomLocation()
+	Vector3 GetRandomLocation()     
 	{
-		var pos = spawnPoint.position;
+		var pos = boat.position + offset;
 		var random = (Random.value - .5f) * 2 * spawnWidth;
-		return pos + spawnPoint.right * random;	
+		return pos + folder.right * random;	
 	}
 
 	public void SpawnObject(int numberOfObjects){
 		for(int i = 0; i < numberOfObjects; i++) {
 			var gameObject = GetRandomObject();
 			gameObject.transform.position = GetRandomLocation();
+            gameObject.transform.SetParent(folder);
 			gameObject.SetActive(true);
 		}
 	}

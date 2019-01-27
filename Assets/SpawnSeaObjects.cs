@@ -9,13 +9,14 @@ public class SpawnSeaObjects : MonoBehaviour
     public float minSeconds = 2;
     public float maxSeconds = 7;
     public float distance;
+    public Transform spawnPoint;
     public List<GameObject> objects;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(SpawnObject());
     }
 
     // Update is called once per frame
@@ -44,12 +45,18 @@ public class SpawnSeaObjects : MonoBehaviour
         timer = 0;
     }
 
-    private void SpawnObject()
+    IEnumerator SpawnObject()
     {
-        Debug.Log("instancing");
-        int spawnId = (int)Random.Range(0f, objects.Count);
-        float randomModifier = Random.Range(-1 * distance, distance);
-        Vector3 newPosition = new Vector3(transform.position.x + randomModifier, transform.position.y, transform.position.z + randomModifier);
-        Instantiate(objects[spawnId], newPosition, Quaternion.Euler(0,Random.Range(0,360), 0));
+        while (true)
+        {
+            Debug.Log("instancing");
+            int spawnId = (int)Random.Range(0f, objects.Count);
+            float randomModifier = Random.Range(-1 * distance, distance);
+            Vector3 newPosition = new Vector3(spawnPoint.position.x + randomModifier, spawnPoint.position.y, spawnPoint.position.z + randomModifier);
+            Instantiate(objects[spawnId], newPosition, Quaternion.Euler(0, Random.Range(0, 360), 0));
+
+            yield return new WaitForSeconds(6);
+
+        }
     }
 }
