@@ -27,6 +27,12 @@ public static class Water {
 		new GrestnerParamters(.12f, 1f, 2f, 1f, new Vector2(0, .5f)){}
 	};
 
+	static Vector2 islandPosition = Vector3.zero;
+	static float islandThreshold = 10f;
+	static float distanceFalloff = 10f;
+	static float minWaveHeight = .3f;
+	static float maxWaveHeight = 1.0f;
+
 	public static Vector3 GetNormal(Vector2 position){
 		var tangent = GetTangent(position, Vector2.up);
 		var biTangent = GetTangent(position, Vector2.right);
@@ -50,7 +56,13 @@ public static class Water {
 			yPos += (layer.steepness * layer.amplitude) * layer.direction.y * Mathf.Cos(layer.crestSharpness * Vector2.Dot(layer.direction, pos) + layer.phase * Time.time);
 		}
 
-		return yPos;
+		var multiplier = Vector2.Distance(islandPosition, pos);
+		multiplier -= islandThreshold;
+		multiplier /= distanceFalloff;
+		multiplier = Mathf.Clamp01(multiplier);
+		multiplier = Mathf.Lerp(minWaveHeight, maxWaveHeight, multiplier);
+
+		return multiplier * yPos;
 	}
 
 	public static float GetHeightAt(float x, float y){
