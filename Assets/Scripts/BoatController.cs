@@ -10,6 +10,10 @@ public class BoatController : MonoBehaviour
     [Space(10)]
     public float OffsetHeight;
     public float TargetHeight;
+
+    [Tooltip("How fast the object will float to the Target Height")]
+    public float FloatingMultiplier;
+
     public float Mass=100;
     public float MaxAngularVelocity = 2;
 
@@ -77,7 +81,7 @@ public class BoatController : MonoBehaviour
         TargetHeight = Water.GetHeightAt(position2D) + OffsetHeight;
         ChildRotation.transform.rotation = Quaternion.LookRotation(tangent, normal);
 
-        ChildHeight.transform.position = Vector3.Lerp(ChildHeight.transform.position, new Vector3(0, TargetHeight, 0) + transform.position, Time.fixedDeltaTime);
+        ChildHeight.transform.position = Vector3.Lerp(ChildHeight.transform.position, new Vector3(0, TargetHeight, 0) + transform.position, Time.fixedDeltaTime * FloatingMultiplier);
 
         CurrentSpeed = Vector3.Dot(transform.forward, rb.velocity);
         CurrentTorque = rb.angularVelocity.y;
