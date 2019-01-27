@@ -76,11 +76,11 @@ public class BoatController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            rb.AddTorque(-transform.up * MaxTorque, ForceMode.Force);
+            rb.AddTorque(-transform.up * MaxTorque, ForceMode.Acceleration);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            rb.AddTorque(transform.up * MaxTorque, ForceMode.Force);
+            rb.AddTorque(transform.up * MaxTorque, ForceMode.Acceleration);
         }
 
         var position2D = new Vector2(transform.position.x, transform.position.z);
