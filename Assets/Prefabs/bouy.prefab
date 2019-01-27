@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2127992740}
   - component: {fileID: 2127992739}
   - component: {fileID: 2127992738}
-  - component: {fileID: 2127992737}
+  - component: {fileID: 6020794056222455723}
   m_Layer: 0
   m_Name: bouy
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127992736}
-  m_LocalRotation: {x: 0.00028398368, y: -0.21406527, z: -0.00023941655, w: 0.97681934}
+  m_LocalRotation: {x: 0.00028513197, y: -0.21406186, z: -0.00024135555, w: 0.97682005}
   m_LocalPosition: {x: 0, y: 0, z: -11.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -79,7 +79,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &2127992737
+--- !u!114 &6020794056222455723
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,14 +89,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: cebab5a2c83fddc48b84e028912fcb46, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d608bcd44ec6ad4ba3e36344fb91157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 1}
-  speed: 0
-  amplitude: 0
-  frequency: 0
-  offset: 0
 --- !u!1001 &978340730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108,11 +103,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: bouy_bell
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 415bec43e91583349add9d6a5ce639f7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 415bec43e91583349add9d6a5ce639f7,
         type: 3}
@@ -169,21 +159,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 415bec43e91583349add9d6a5ce639f7,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 415bec43e91583349add9d6a5ce639f7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3a3d525e9f51cf64aaee829698390efb, type: 2}
-    - target: {fileID: -1504981713932161579, guid: 415bec43e91583349add9d6a5ce639f7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 415bec43e91583349add9d6a5ce639f7, type: 3}
 --- !u!4 &5006512735782559840 stripped
