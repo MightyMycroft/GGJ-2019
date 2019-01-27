@@ -7,6 +7,9 @@ public class GameController : MonoBehaviour
     public Animator animator;
     private static float time = 0f;
     public float maxTimeInSeconds;
+	public GameObject smoke;
+	public GameObject light;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +40,8 @@ public class GameController : MonoBehaviour
             if(animator.GetBool("AttackCracken") == false)
             {
                 animator.SetBool("AttackCracken", true);
+				light.SetActive(false);
+				smoke.SetActive(false);
             }
         }
     }
@@ -46,6 +51,9 @@ public class GameController : MonoBehaviour
         time = 0f;
         animator.SetBool("AttackCracken", false);
     }
+
+	private void HideBoat(){
+	}
 
 
 }

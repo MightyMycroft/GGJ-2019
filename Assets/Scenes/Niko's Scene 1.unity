@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 4a00516f96223f74c9c5aa42e0401fbd, type: 2}
+  sharedProfile: {fileID: 0}
   isGlobal: 1
   blendDistance: 0
   weight: 1
@@ -451,15 +451,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1829687227, guid: 3fa14955606d0fd43ae9160a0b1dbf01, type: 3}
-      propertyPath: m_Shadows.m_Type
-      value: 0
+    - target: {fileID: 1517406183085164105, guid: 3fa14955606d0fd43ae9160a0b1dbf01,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 0.04000044
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fa14955606d0fd43ae9160a0b1dbf01, type: 3}
 --- !u!4 &113957387 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5684995893122573747, guid: 3fa14955606d0fd43ae9160a0b1dbf01,
+    type: 3}
+  m_PrefabInstance: {fileID: 113957386}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &113957388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5489586631036843434, guid: 3fa14955606d0fd43ae9160a0b1dbf01,
+    type: 3}
+  m_PrefabInstance: {fileID: 113957386}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &113957389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1820385951934806683, guid: 3fa14955606d0fd43ae9160a0b1dbf01,
     type: 3}
   m_PrefabInstance: {fileID: 113957386}
   m_PrefabAsset: {fileID: 0}
@@ -2791,6 +2804,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1538373253}
   maxTimeInSeconds: 60
+  smoke: {fileID: 113957389}
+  light: {fileID: 113957388}
 --- !u!4 &1286685292
 Transform:
   m_ObjectHideFlags: 0
