@@ -53,7 +53,6 @@ public class GameController : MonoBehaviour
     }
 
 	private void HideBoat(){
-		boat.SetActive(false);
 	}
 
 
