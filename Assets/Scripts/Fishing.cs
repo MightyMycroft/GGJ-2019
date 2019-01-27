@@ -34,7 +34,7 @@ public class Fishing : MonoBehaviour
             // Maybe make it corutine so we can do it like over a few seconds or something, 
             // like starts from the top and goes to bottom in like 1-2 seconds
 
-            if(fishCargoSpaces[i].GetChild(0) != null)
+            if(fishCargoSpaces[i].childCount != 0)
                 Destroy(fishCargoSpaces[i].GetChild(0).gameObject);
         }
 
