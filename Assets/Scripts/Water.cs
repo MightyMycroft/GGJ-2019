@@ -22,9 +22,9 @@ public static class Water {
 	static GrestnerParamters[] layers = new GrestnerParamters[]
 	{
 		new GrestnerParamters(1f, 1f, 1f, .5f, new Vector2(0, 1f)){},
-		new GrestnerParamters(.5f, 1f, .5f, .5f, new Vector2(0, .8f)){},
-		new GrestnerParamters(.25f, 1f, 1f, 1f, new Vector2(0, 1.2f)){},
-		new GrestnerParamters(.12f, 1f, 2f, 1f, new Vector2(0, .5f)){}
+		new GrestnerParamters(.8f, 1f, .5f, .5f, new Vector2(0.6f, .8f)){},
+		new GrestnerParamters(1.67f, .5f, 1.09f, -.29f, new Vector2(0.2f, 1.2f)){},
+		new GrestnerParamters(.45f, 1f, 2f, 1f, new Vector2(0.7f, .5f)){}
 	};
 
 	static Vector2 islandPosition = Vector3.zero;
