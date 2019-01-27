@@ -208,7 +208,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 1879699463}
   m_Anchor: {x: 0, y: 0.08999926, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.132, y: -0.07000089, z: 0.03999996}
+  m_ConnectedAnchor: {x: -0.132, y: -0.07000089, z: 0.04000044}
   serializedVersion: 2
   m_Spring: 10000
   m_Damper: 2
@@ -561,11 +561,6 @@ PrefabInstance:
         type: 3}
       propertyPath: curve.m_Curve.Array.size
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260779200739266281, guid: 72533dcc71e96934f88de992a048af22,
-        type: 3}
-      propertyPath: multiplier
-      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7260779200739266281, guid: 72533dcc71e96934f88de992a048af22,
         type: 3}
@@ -1920,11 +1915,6 @@ PrefabInstance:
         type: 3}
       propertyPath: curve.m_Curve.Array.size
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3260896957604431961, guid: 6a7f102eb5f38c84cada75b20eedcc39,
-        type: 3}
-      propertyPath: multiplier
-      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3260896957604431961, guid: 6a7f102eb5f38c84cada75b20eedcc39,
         type: 3}
