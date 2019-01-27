@@ -36219,8 +36219,8 @@ MonoBehaviour:
   FloatingMultiplier: 2
   Mass: 100
   MaxAngularVelocity: 0.5
-  MaxTorque: 1
-  MaxForce: 2
+  MaxTorque: 1.4
+  MaxForce: 2.8
   CurrentSpeed: 0
   CurrentTorque: 0
 --- !u!54 &5684995893122573746
