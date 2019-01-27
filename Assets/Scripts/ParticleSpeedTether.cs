@@ -9,7 +9,7 @@ public class ParticleSpeedTether : MonoBehaviour
 
     private void Awake()
     {
-        boat = GameObject.FindWithTag("Player").GetComponent<BoatController>();
+        boatController = GameObject.FindWithTag("Player").GetComponent<BoatController>();
     }
 
     void Start()
