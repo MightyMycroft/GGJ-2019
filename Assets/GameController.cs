@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
 	public GameObject smoke;
 	public GameObject light;
 
+    bool played = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,12 @@ public class GameController : MonoBehaviour
 
     private void CheckCrackenAnimation()
     {
+        if (GetTime() > maxTimeInSeconds - 9 && !played)
+        {
+            played = true;
+            Debug.Log("Play Spook");
+            GetComponent<AudioSource>().Play();
+        }   
         if(GetTime() > maxTimeInSeconds)
         {
             Debug.Log("It is over");
