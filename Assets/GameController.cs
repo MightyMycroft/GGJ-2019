@@ -7,10 +7,12 @@ public class GameController : MonoBehaviour
     public Animator animator;
     private static float time = 0f;
     public float maxTimeInSeconds;
+    public ObjectSpawner spawner;
+    private bool isAllowedToSpawn = true;
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(SpawnCheck());
     }
 
     // Update is called once per frame
@@ -18,6 +20,7 @@ public class GameController : MonoBehaviour
     {
         IncreaseTime();
         CheckCrackenAnimation();
+        SpawnCheck();
     }
 
     private static void IncreaseTime()
@@ -47,5 +50,6 @@ public class GameController : MonoBehaviour
         time = 0f;
         animator.SetBool("AttackCracken", false);
     }
+
 
 }
