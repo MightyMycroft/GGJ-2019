@@ -17,6 +17,8 @@ public class BoatController : MonoBehaviour
     public float Mass = 100;
     public float MaxAngularVelocity = 2;
 
+    private AudioSource motorSource;
+
     public float FinalHeight
     {
         get
@@ -65,6 +67,8 @@ public class BoatController : MonoBehaviour
         rb.mass = Mass;
         ChildHeight = transform.GetChild(0);
         ChildRotation = ChildHeight.GetChild(0);
+
+        motorSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -76,11 +80,11 @@ public class BoatController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            rb.AddTorque(-transform.up * MaxTorque, ForceMode.Force);
+            rb.AddTorque(-transform.up * MaxTorque, ForceMode.Acceleration);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            rb.AddTorque(transform.up * MaxTorque, ForceMode.Force);
+            rb.AddTorque(transform.up * MaxTorque, ForceMode.Acceleration);
         }
 
         var position2D = new Vector2(transform.position.x, transform.position.z);
@@ -94,6 +98,9 @@ public class BoatController : MonoBehaviour
 
         CurrentSpeed = Vector3.Dot(transform.forward, rb.velocity);
         CurrentTorque = rb.angularVelocity.y;
+
+        
+        motorSource.pitch = NormalizedSpeed;
     }
 
 
