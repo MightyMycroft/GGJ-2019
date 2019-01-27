@@ -8,26 +8,19 @@ public class SteeringWheel : MonoBehaviour
     public float maxAngle = 180;
     public float currentAngle;
 
-    private float deltaAngle;
+    float deltaAngle;
+    BoatController boatController;
+
+    private void Awake()
+    {
+        boatController = GameObject.FindWithTag("Player").GetComponent<BoatController>();
+    }
 
     void Update()
     {
-        deltaAngle = 0.1f*Mathf.Sin(Time.time * 15) + 0.3f * Mathf.Sin(Time.time * 2) + 0.5f * Mathf.Cos(Time.time * 1.2f);
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            currentAngle = Mathf.Lerp(currentAngle, maxAngle, Time.deltaTime);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            currentAngle = Mathf.Lerp(currentAngle, minAngle, Time.deltaTime);
-        }
-        else
-        {
-            currentAngle = Mathf.Lerp(currentAngle, 0, Time.deltaTime);
-        }
+        deltaAngle = 1f * Mathf.Sin(Time.time * 15) + 3f * Mathf.Sin(Time.time * 2) + 5f * Mathf.Cos(Time.time * 1.2f);
 
         currentAngle += deltaAngle;
-        transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(0, 0, currentAngle), Time.deltaTime * 2);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(0, 0, -(boatController.NormalizedSteering * 340 + deltaAngle * boatController.NormalizedSpeed)), Time.deltaTime * 2);
     }
 }

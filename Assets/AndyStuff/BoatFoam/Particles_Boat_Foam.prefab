@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7961539441258486683}
   - component: {fileID: 1202073447396845516}
   - component: {fileID: 3712797441899614733}
+  - component: {fileID: 7260779200739266281}
   m_Layer: 0
   m_Name: Particles_Boat_Foam
   m_TagString: Untagged
@@ -4699,3 +4700,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &7260779200739266281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7157671003305038225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 91b2f48ab74457649be7ea541d54b60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

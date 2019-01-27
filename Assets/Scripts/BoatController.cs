@@ -14,7 +14,7 @@ public class BoatController : MonoBehaviour
     [Tooltip("How fast the object will float to the Target Height")]
     public float FloatingMultiplier;
 
-    public float Mass=100;
+    public float Mass = 100;
     public float MaxAngularVelocity = 2;
 
     public float FinalHeight
@@ -25,7 +25,7 @@ public class BoatController : MonoBehaviour
         }
     }
 
-    public float FinalSteering
+    public float NormalizedSteering
     {
         get
         {
@@ -33,20 +33,29 @@ public class BoatController : MonoBehaviour
         }
     }
 
+    public float NormalizedSpeed
+    {
+        get
+        {
+            return CurrentSpeed / MaxForce;
+        }
+    }
+
     [Space(5)]
     [Header("Rotation")]
-    public float CurrentTorque = 0;
     public float MaxTorque = 10;
 
     [Space(5)]
     [Header("Speed")]
-    public float CurrentSpeed;
     public float MaxForce = 10;
+    
+    [Space(5)]
+    [Header("Monitors")]
+    public float CurrentSpeed;
+    public float CurrentTorque;
 
-    [Space(10)]
     Transform ChildHeight;
     Transform ChildRotation;
-
     Rigidbody rb;
 
     private void Awake()
