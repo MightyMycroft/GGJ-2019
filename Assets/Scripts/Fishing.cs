@@ -48,7 +48,7 @@ public class Fishing : MonoBehaviour
         {
             Debug.Log("Fish Caught!");
 
-            AudioSource.PlayClipAtPoint(reelingClip[Random.Range(0, reelingClip.Length)], transform.position);
+            AudioSource.PlayClipAtPoint(reelingClip[Random.Range(0, reelingClip.Length)], Camera.main.transform.position);
 
             collider.transform.parent = fishCargoSpaces[cargoIndex];
             collider.transform.localPosition = Vector3.zero;
