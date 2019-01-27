@@ -11,6 +11,7 @@ public class FishMover : MonoBehaviour
 	[SerializeField] float amplitude;
 	[SerializeField] float frequency;
 	[SerializeField] float offset;
+	[SerializeField] float heightOffset;
 
 	private Transform m_transform;
 
@@ -25,7 +26,7 @@ public class FishMover : MonoBehaviour
 		var fishHeight = GetHeight(amplitude, frequency, offset);
 
 		position += Time.deltaTime * speed * DirectionToWorld(direction);
-		position.y = Water.GetHeightAt(position2D);// + fishHeight;
+		position.y = Water.GetHeightAt(position2D) +  heightOffset;// + fishHeight;
 
 		var normal = Water.GetNormal(position2D);
 		var tangent = Water.GetTangent(position2D, direction);
