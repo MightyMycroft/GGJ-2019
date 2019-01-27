@@ -1,38 +1,26 @@
 fileFormatVersion: 2
-guid: caaf3f2a85ebdd849b8927c00a6059a3
+guid: d2b223a87ef38074f9d8e25cf86c6d08
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
-      74: -6787691547383614650
-    second: Armature|Circle.003Action
+      74: 4878910733534360098
+    second: Armature.002|Circle.003Action
   - first:
-      74: -1559071518392153964
-    second: Armature|Cube.001Action
+      74: 4797711083207451385
+    second: Armature.002|Cube.001Action
   - first:
-      74: -317224928337833705
-    second: Armature|Cube.005Action.001
+      74: 4465498701135180518
+    second: Armature.002|Cube.005Action.001
   - first:
-      74: -1978271865232748619
-    second: Armature|Cube.006Action.001
+      74: -8634018395426474306
+    second: Armature.002|Cube.006Action.001
   - first:
-      74: -2592856928584707257
-    second: Armature|Cube.007Action
+      74: -6536341897496050632
+    second: Armature.002|Cube.007Action
   - first:
-      74: 5959354616196006809
-    second: Armature|Cube.007Action.001
-  - first:
-      74: 600007478314550588
-    second: Armature|idle_tentacle
-  - first:
-      74: -4119851138926960516
-    second: Armature|idle_tentacle.001
-  - first:
-      74: 5038578616295429184
-    second: Armature|Plane.003Action
-  - first:
-      74: -8386625166846426128
-    second: Armature|wreckShip
+      74: 4325130493057520519
+    second: Armature.002|sailor
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -53,7 +41,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -62,9 +50,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Circle.003Action
-      takeName: Armature|Circle.003Action
-      internalID: -6787691547383614650
+      name: Armature.002|Circle.003Action
+      takeName: Armature.002|Circle.003Action
+      internalID: 4878910733534360098
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -91,9 +79,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Cube.001Action
-      takeName: Armature|Cube.001Action
-      internalID: -1559071518392153964
+      name: Armature.002|Cube.001Action
+      takeName: Armature.002|Cube.001Action
+      internalID: 4797711083207451385
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -120,9 +108,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Cube.005Action.001
-      takeName: Armature|Cube.005Action.001
-      internalID: -317224928337833705
+      name: Armature.002|Cube.005Action.001
+      takeName: Armature.002|Cube.005Action.001
+      internalID: 4465498701135180518
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -149,9 +137,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Cube.006Action.001
-      takeName: Armature|Cube.006Action.001
-      internalID: -1978271865232748619
+      name: Armature.002|Cube.006Action.001
+      takeName: Armature.002|Cube.006Action.001
+      internalID: -8634018395426474306
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -178,9 +166,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Cube.007Action
-      takeName: Armature|Cube.007Action
-      internalID: -2592856928584707257
+      name: Armature.002|Cube.007Action
+      takeName: Armature.002|Cube.007Action
+      internalID: -6536341897496050632
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -207,134 +195,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Cube.007Action.001
-      takeName: Armature|Cube.007Action.001
-      internalID: 5959354616196006809
+      name: Armature.002|sailor
+      takeName: Armature.002|sailor
+      internalID: 4325130493057520519
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 101
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Armature|idle_tentacle
-      takeName: Armature|idle_tentacle
-      internalID: 600007478314550588
-      firstFrame: 0
-      lastFrame: 2
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Armature|idle_tentacle.001
-      takeName: Armature|idle_tentacle.001
-      internalID: -4119851138926960516
-      firstFrame: 0
-      lastFrame: 2
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Armature|Plane.003Action
-      takeName: Armature|Plane.003Action
-      internalID: 5038578616295429184
-      firstFrame: 0
-      lastFrame: 1
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Armature|wreckShip
-      takeName: Armature|wreckShip
-      internalID: -8386625166846426128
-      firstFrame: 0
-      lastFrame: 100
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -401,9 +273,9 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: Armature
+    rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
