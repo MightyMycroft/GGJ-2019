@@ -62,7 +62,7 @@ public class BoatController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            rb.AddForce(transform.forward * MaxForce, ForceMode.Force);
+            rb.AddForce(transform.forward * MaxForce, ForceMode.Acceleration);
         }
 
         if (Input.GetKey(KeyCode.A))
