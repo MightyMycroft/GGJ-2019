@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         IncreaseTime();
+        CheckCrackenAnimation();
     }
 
     private static void IncreaseTime()
@@ -31,8 +32,9 @@ public class GameController : MonoBehaviour
 
     private void CheckCrackenAnimation()
     {
-        if(time > maxTimeInSeconds)
+        if(GetTime() > maxTimeInSeconds)
         {
+            Debug.Log("It is over");
             if(animator.GetBool("AttackCracken") == false)
             {
                 animator.SetBool("AttackCracken", true);
