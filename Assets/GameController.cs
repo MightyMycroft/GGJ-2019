@@ -10,7 +10,6 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -47,5 +46,6 @@ public class GameController : MonoBehaviour
         time = 0f;
         animator.SetBool("AttackCracken", false);
     }
+
 
 }
