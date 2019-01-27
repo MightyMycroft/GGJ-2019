@@ -22,6 +22,7 @@ public class SpawnSeaObjects : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        CheckForSpawn();
     }
 
 
@@ -45,6 +46,7 @@ public class SpawnSeaObjects : MonoBehaviour
 
     private void SpawnObject()
     {
+        Debug.Log("instancing");
         int spawnId = (int)Random.Range(0f, objects.Count);
         float randomModifier = Random.Range(-1 * distance, distance);
         Vector3 newPosition = new Vector3(transform.position.x + randomModifier, transform.position.y, transform.position.z + randomModifier);
